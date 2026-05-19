@@ -13,6 +13,10 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Run Recon"
+    "default_title": "Run Recon",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "128": "icon.png"
   }
 }
