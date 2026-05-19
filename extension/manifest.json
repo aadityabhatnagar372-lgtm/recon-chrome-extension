@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "One-click Recon",
+  "version": "1.0",
+  "description": "Automated passive reconnaissance for bug bounty and security research.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Run Recon"
+  }
+}

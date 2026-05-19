@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recon Report</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo"></div>
+        <h1>RECON<span class="highlight">SCOPE</span></h1>
+      </div>
+      <div id="target-url" class="target">Initializing...</div>
+    </header>
+
+    <div id="loading-state" class="state-container">
+      <div class="spinner"></div>
+      <p>Gathering intelligence...</p>
+    </div>
+
+    <div id="error-state" class="state-container hidden">
+      <div class="error-icon">⚠️</div>
+      <p id="error-message">Failed to connect to backend.</p>
+    </div>
+
+    <div id="results-state" class="hidden">
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="tab-overview">Overview</button>
+        <button class="tab-btn" data-tab="tab-dns">DNS</button>
+        <button class="tab-btn" data-tab="tab-subs">Subdomains</button>
+        <button class="tab-btn" data-tab="tab-tech">Tech Stack</button>
+        <button class="tab-btn" data-tab="tab-wayback">Wayback</button>
+        <button class="tab-btn" data-tab="tab-whois">WHOIS</button>
+      </div>
+
+      <!-- Overview Tab -->
+      <div id="tab-overview" class="tab-content active">
+        <div class="card">
+          <h3>Network Info</h3>
+          <div class="kv-list" id="overview-network"></div>
+        </div>
+        <div class="card mt-10" id="shodan-card" style="display: none;">
+          <h3>Shodan Threat Intel (Passive)</h3>
+          <div class="kv-list" id="shodan-info"></div>
+        </div>
+        <div class="card mt-10">
+          <h3>HTTP Info</h3>
+          <div class="kv-list" id="overview-http"></div>
+        </div>
+        <div class="card mt-10">
+          <h3>Favicon Hash (Shodan)</h3>
+          <div class="hash-box" id="overview-favicon">N/A</div>
+        </div>
+      </div>
+
+      <!-- DNS Tab -->
+      <div id="tab-dns" class="tab-content">
+        <div class="card" id="dns-content"></div>
+      </div>
+
+      <!-- Subdomains Tab -->
+      <div id="tab-subs" class="tab-content">
+        <div class="card">
+          <div class="scroll-list" id="subdomains-list"></div>
+        </div>
+      </div>
+
+      <!-- WHOIS Tab -->
+      <div id="tab-whois" class="tab-content">
+        <div class="card">
+          <div class="kv-list" id="whois-content"></div>
+        </div>
+      </div>
+
+      <!-- Tech Stack Tab -->
+      <div id="tab-tech" class="tab-content">
+        <div class="card">
+          <div class="scroll-list" id="tech-list"></div>
+        </div>
+      </div>
+
+      <!-- Wayback Tab -->
+      <div id="tab-wayback" class="tab-content">
+        <div class="card">
+          <div class="scroll-list" id="wayback-list"></div>
+        </div>
+      </div>
+
+      <!-- Export Footer -->
+      <div style="margin-top: 15px; display: flex; justify-content: flex-end; padding-top: 10px; border-top: 1px solid var(--panel-border);">
+        <button id="export-report" style="background: rgba(255,255,255,0.05); color: var(--text-primary); border: 1px solid var(--panel-border); padding: 6px 12px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; transition: all 0.2s; font-family: inherit;">📄 Export Report</button>
+      </div>
+
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
