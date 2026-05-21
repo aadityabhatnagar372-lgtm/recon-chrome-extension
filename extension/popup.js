@@ -1,3 +1,5 @@
+const API_BASE = "https://recon-api-1nk2.onrender.com";
+
 document.addEventListener("DOMContentLoaded", async () => {
   const targetEl = document.getElementById("target-url");
   const loadingState = document.getElementById("loading-state");
