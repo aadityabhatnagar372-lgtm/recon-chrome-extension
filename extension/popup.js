@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     targetEl.textContent = urlObj.hostname;
 
     // Fetch recon data from local backend
-    const res = await fetch(`http://localhost:8000/api/recon?url=${encodeURIComponent(url)}`);
+    const res = await fetch(`${API_BASE}/api/recon?url=${encodeURIComponent(url)}`);
     if (!res.ok) {
       throw new Error(`Backend error: ${res.status}`);
     }
