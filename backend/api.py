@@ -3,6 +3,7 @@ import socket
 from urllib.parse import urlparse
 import requests
 import dns.resolver
+import os
 import whois
 from ipwhois import IPWhois
 try:
