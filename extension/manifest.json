@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "One-click Recon",
-  "version": "1.0",
+  "version": "1.2",
   "description": "Automated passive reconnaissance for bug bounty and security research.",
   "permissions": [
     "activeTab",
